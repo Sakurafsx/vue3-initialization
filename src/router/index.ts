@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router"
 
 const routes = [
   {
@@ -17,20 +17,20 @@ const routes = [
     name: "Register",
     component: () => import("../views/Register.vue")
   }
-];
+]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes
-});
+})
 
 router.beforeEach((to, from, next) => {
-  const isAuthenticated = !!localStorage.getItem("token");
+  const isAuthenticated = !!localStorage.getItem("token")
   if (to.name !== "Login" && !isAuthenticated) {
-    next({ name: "Login" });
+    next({ name: "Login" })
   } else {
-    next();
+    next()
   }
-});
+})
 
-export default router;
+export default router

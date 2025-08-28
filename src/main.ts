@@ -1,15 +1,15 @@
-import { createApp } from "vue";
-import "@/assets/css/reset.css";
-import "@/assets/css/style.css";
-import "@/assets/css/element.scss";
+import { createApp } from "vue"
+import App from "./App.vue"
+import { pinia } from "./pinia"
+import router from "./router"
 
-import App from "./App.vue";
-import router from "./router";
-import { pinia } from "./pinia";
+import "@/assets/css/reset.css"
+import "@/assets/css/style.css"
+import "@/assets/css/element.scss"
 
-const app = createApp(App);
+const app = createApp(App)
 
-app.use(router);
-app.use(pinia);
+app.use(router)
+app.use(pinia)
 
-app.mount("#app");
+app.mount("#app")
